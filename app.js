@@ -50,5 +50,28 @@ for (let i = 0; i < n; i++) {
   for (let j = 0; j <= i; j++) {
     row = row + "*";
   }
-  console.log(row);
+//   console.log(row);
+}
+
+// Write a programme to print this
+// 1
+// 1 0
+// 1 0 1
+// 1 0 1 0
+// 1 0 1 0 1
+
+// Here is my solution
+for (let i = 0; i < n; i++) {
+  let row = "";
+  let flip = 1;
+  for (let j = 0; j <= i; j++) {
+    row = row + flip;
+
+    if (flip === 1) {
+      flip = 0;
+    } else {
+      flip = 1;
+    }
+  }
+  console.log(row)
 }
