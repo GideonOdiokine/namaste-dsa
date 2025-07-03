@@ -76,7 +76,6 @@ for (let i = 0; i < n; i++) {
   //   console.log(row)
 }
 
-
 // 1
 // 01
 // 010
@@ -96,5 +95,42 @@ for (let i = 0; i < n; i++) {
       flip = 1;
     }
   }
-  console.log(row);
+  //   console.log(row);
 }
+
+// Length of Last Word
+// Strings
+// Use In-Built Method solution
+// var lengthOfLastWord=(s)=>{
+//   s= s.trim();
+//   s= s.split(' ');
+//   return s[s.length - 1].length;
+// }
+
+// Now using a different approach;
+var lengthOfLastWord = (s) => {
+  // Trim all the spaces at the end
+  let n = s.length - 1;
+  let count = 0;
+
+  while (n >= 0) {
+    if (s[n] === " ") {
+      --n;
+    } else {
+      break;
+    }
+  }
+
+  // Count the character till u reach a space;
+  while (n >= 0) {
+    if (s[n] !== " ") {
+        n--
+      count++;
+    } else {
+      break;
+    }
+  }
+  return count;
+};
+// "How are you doing -----"
+console.log(lengthOfLastWord("Hello world  sentence   "));
