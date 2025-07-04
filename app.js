@@ -108,27 +108,42 @@ for (let i = 0; i < n; i++) {
 // }
 
 // Now using a different approach;
+// var lengthOfLastWord = (s) => {
+//   // Trim all the spaces at the end
+//   let n = s.length - 1;
+//   let count = 0;
+
+//   while (n >= 0) {
+//     if (s[n] === " ") {
+//       --n;
+//     } else {
+//       break;
+//     }
+//   }
+
+//   // Count the character till u reach a space;
+//   while (n >= 0) {
+//     if (s[n] !== " ") {
+//         n--
+//       count++;
+//     } else {
+//       break;
+//     }
+//   }
+//   return count;
+// };
+
 var lengthOfLastWord = (s) => {
-  // Trim all the spaces at the end
   let n = s.length - 1;
-  let count = 0;
-
-  while (n >= 0) {
-    if (s[n] === " ") {
-      --n;
-    } else {
-      break;
-    }
+  //   loop through space
+  while (n >= 0 && s[n] === " ") {
+    n--;
   }
-
-  // Count the character till u reach a space;
-  while (n >= 0) {
-    if (s[n] !== " ") {
-        n--
-      count++;
-    } else {
-      break;
-    }
+  //   keep count of the last word;
+  let count = 0;
+  while (n >= 0 && s[n] !== " ") {
+    n--;
+    count++;
   }
   return count;
 };
