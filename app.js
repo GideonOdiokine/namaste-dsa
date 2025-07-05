@@ -148,4 +148,20 @@ var lengthOfLastWord = (s) => {
   return count;
 };
 // "How are you doing -----"
-console.log(lengthOfLastWord("Hello world  sentence   "));
+// console.log(lengthOfLastWord("Hello world  sentence   "));
+
+// Insertion sort
+
+let arr = [10, 8, 6, 4, 1, 2, 7];
+
+for (let i = 1; i < arr.length; i++) {
+  let curr = arr[i];
+  let prev = i - 1;
+
+  while (arr[prev] > curr && prev >= 0) {
+    arr[prev + 1] = arr[prev];
+    prev--;
+  }
+  arr[prev + 1] = curr;
+}
+console.log(arr);
