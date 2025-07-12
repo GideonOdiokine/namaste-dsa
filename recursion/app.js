@@ -16,21 +16,13 @@ function sumArry(n) {
   return arr[n] + sumArry(n - 1);
 }
 
-
 // Exercise
 function sumOddNumber(n) {
   let isOdd = arr[n] % 2 != 0;
   if (n == 0) {
-    if (isOdd) {
-      return arr[n];
-    } else return 0;
+    return isOdd ? arr[n] : 0;
   }
-
-  if (isOdd) {
-    return arr[n] + sumOddNumber(n - 1);
-  } else {
-    return 0 + sumOddNumber(n - 1);
-  }
+  return isOdd ? arr[n] + sumOddNumber(n - 1) : 0 + sumOddNumber(n - 1);
 }
 
 // here is the tracing base on my understanding;
