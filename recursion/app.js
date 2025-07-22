@@ -7,14 +7,7 @@
 
 // console.log(sum(5));
 
-// sum of all elements in an array
-let arr = [5, 3, 2, 0, 1];
-function sumArry(n) {
-  if (n == 0) {
-    return arr[n];
-  }
-  return arr[n] + sumArry(n - 1);
-}
+
 
 // Exercise
 function sumOddNumber(n) {
@@ -25,6 +18,14 @@ function sumOddNumber(n) {
   return isOdd ? arr[n] + sumOddNumber(n - 1) : 0 + sumOddNumber(n - 1);
 }
 
+// sum of all elements in an array
+let arr = [5, 3, 2, 0, 1];
+function sumArry(n) {
+  if (n == 0) {
+    return arr[n];
+  }
+  return arr[n] + sumArry(n - 1);
+}
 // here is the tracing base on my understanding;
 // sumArry(4)
 //  arr(4) + sumArry(4 - 1) => 1 + sumArry(3);
